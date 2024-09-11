@@ -1,10 +1,11 @@
 'use strict';
 
-import { NativeModules } from 'react-native';
+import { TurboModuleRegistry, NativeModules } from 'react-native';
 import EventEmitter from 'eventemitter3';
-const Sockets = NativeModules.TcpSockets;
 import Socket from './Socket';
 import { nativeEventEmitter, getNextId } from './Globals';
+
+const Sockets = TurboModuleRegistry ? TurboModuleRegistry.get('TcpSocketModule') : NativeModules.TcpSockets;
 
 /**
  * @typedef {import('./TLSSocket').default} TLSSocket

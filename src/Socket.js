@@ -1,10 +1,12 @@
 'use strict';
 
-import { NativeModules } from 'react-native';
 import EventEmitter from 'eventemitter3';
 import { Buffer } from 'buffer';
-const Sockets = NativeModules.TcpSockets;
+import { TurboModuleRegistry, NativeModules } from 'react-native';
 import { nativeEventEmitter, getNextId } from './Globals';
+
+const Sockets = TurboModuleRegistry ? TurboModuleRegistry.get('TcpSocketModule') : NativeModules.TcpSockets;
+
 
 /**
  * @typedef {"ascii" | "utf8" | "utf-8" | "utf16le" | "ucs2" | "ucs-2" | "base64" | "latin1" | "binary" | "hex"} BufferEncoding

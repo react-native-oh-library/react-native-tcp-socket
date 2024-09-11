@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "tcp_socket",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet",
+      "2in1"
+    ]
+  }
+}

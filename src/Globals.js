@@ -1,5 +1,5 @@
-import { NativeEventEmitter, NativeModules } from 'react-native';
-const Sockets = NativeModules.TcpSockets;
+import { DeviceEventEmitter } from 'react-native';
+
 
 let instanceNumber = 0;
 
@@ -7,6 +7,6 @@ function getNextId() {
     return instanceNumber++;
 }
 
-const nativeEventEmitter = new NativeEventEmitter(Sockets);
+const nativeEventEmitter = DeviceEventEmitter;
 
 export { nativeEventEmitter, getNextId };
