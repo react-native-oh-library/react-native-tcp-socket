@@ -1,7 +1,7 @@
 'use strict';
 
-import { Image, NativeModules } from 'react-native';
-const Sockets = NativeModules.TcpSockets;
+import { Image, NativeModules, TurboModuleRegistry } from 'react-native';
+const Sockets = TurboModuleRegistry ? TurboModuleRegistry.get('TcpSocketModule') : NativeModules.TcpSockets;
 import Socket from './Socket';
 
 /**

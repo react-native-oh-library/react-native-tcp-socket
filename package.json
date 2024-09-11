@@ -1,7 +1,7 @@
 {
   "name": "react-native-tcp-socket",
   "title": "React Native Tcp Socket",
-  "version": "6.2.0",
+  "version": "6.2.0-0.0.1",
   "description": "React Native TCP socket API for Android & iOS with SSL/TLS support",
   "main": "src/index.js",
   "types": "lib/types/index.d.ts",
@@ -33,6 +33,7 @@
     "react-native",
     "iOS",
     "Android",
+    "harmony",
     "tcp-socket",
     "tls",
     "ssl",
@@ -41,6 +42,14 @@
     "tcp",
     "react-native-library"
   ],
+  "harmony": {
+    "alias": "react-native-tcp-socket",
+    "codegenConfig": {
+      "specPaths": [
+        "./src"
+        ]
+      }
+  },
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/Rapsssito"
@@ -81,6 +90,7 @@
   },
   "dependencies": {
     "buffer": "^5.4.3",
-    "eventemitter3": "^4.0.7"
+    "eventemitter3": "^4.0.7",
+    "react-native-tcp-socket": "6.2.0"
   }
 }

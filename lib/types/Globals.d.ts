@@ -1,2 +1,2 @@
-export const nativeEventEmitter: import("react-native").EventEmitter;
+export const nativeEventEmitter: import("react-native").DeviceEventEmitter;
 export function getNextId(): number;
