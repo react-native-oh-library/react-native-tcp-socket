@@ -1,5 +1,5 @@
 {
-  "name": "react-native-tcp-socket",
+  "name": "@react-native-oh-tpl/react-native-tcp-socket",
   "title": "React Native Tcp Socket",
   "version": "6.2.0-0.0.1",
   "description": "React Native TCP socket API for Android & iOS with SSL/TLS support",
@@ -21,6 +21,7 @@
     "/windows",
     "/src",
     "/lib",
+    "/harmony",
     "/*.podspec",
     "/jest"
   ],
