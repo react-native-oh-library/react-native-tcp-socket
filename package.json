@@ -1,8 +1,8 @@
 {
   "name": "@react-native-oh-tpl/react-native-tcp-socket",
   "title": "React Native Tcp Socket",
-  "version": "6.2.0-0.0.1",
-  "description": "React Native TCP socket API for Android & iOS  & HarmonyOS with SSL/TLS support",
+  "version": "6.2.0-0.0.2",
+  "description": "React Native TCP socket API for HarmonyOS with SSL/TLS support",
   "main": "src/index.js",
   "types": "lib/types/index.d.ts",
   "scripts": {
@@ -25,8 +25,6 @@
   },
   "keywords": [
     "react-native",
-    "iOS",
-    "Android",
     "harmony",
     "tcp-socket",
     "tls",
