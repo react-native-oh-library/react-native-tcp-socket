@@ -13,7 +13,7 @@ export class TcpEventListener {
   async onConnection(serverId: number, clientId: number, connection: socket.TCPSocketConnection) {
     let localAddress = await connection?.getLocalAddress() as socket.NetAddress;
     let remoteAddress = await connection?.getRemoteAddress() as socket.NetAddress;
-    let localFamily = remoteAddress.family === 1 ? "IPv6" : "IPv4"
+    let localFamily = remoteAddress.family === 2 ? "IPv6" : "IPv4"
     this.sendEvent("connection", {
       "id": serverId,
       "info": {
@@ -32,7 +32,7 @@ export class TcpEventListener {
   async onSecureConnection(serverId: number, clientId: number, connection: socket.TLSSocketConnection) {
     let localAddress = await connection?.getLocalAddress() as socket.NetAddress;
     let remoteAddress = await connection?.getRemoteAddress() as socket.NetAddress;
-    let remoteFamily = remoteAddress.family === 1 ? "IPv6" : "IPv4"
+    let remoteFamily = remoteAddress.family === 2 ? "IPv6" : "IPv4"
     this.sendEvent("secureConnection", {
       "id": serverId,
       "info": {
@@ -54,6 +54,7 @@ export class TcpEventListener {
       client.getSocket();
     let localAddress = await tcpSocket?.getLocalAddress() as socket.NetAddress;
     let remoteAddress = await tcpSocket?.getRemoteAddress() as socket.NetAddress;
+    let remoteFamily = remoteAddress.family === 2 ? "IPv6" : "IPv4"
     this.sendEvent("connect", {
       "id": cid,
       "connection": {
@@ -61,7 +62,7 @@ export class TcpEventListener {
         "localPort": localAddress.port,
         "remoteAddress": remoteAddress.address,
         "remotePort": remoteAddress.port,
-        "remoteFamily": remoteAddress.family
+        "remoteFamily": remoteFamily
       }
     });
   }
@@ -69,7 +70,7 @@ export class TcpEventListener {
   async onListen(cId: number, tcpSocketServer: TcpSocketServer) {
     let serverSocket: socket.TCPSocketServer | socket.TLSSocketServer = tcpSocketServer.getServerSocket();
     let address: socket.NetAddress = await serverSocket.getLocalAddress();
-    let localFamily = address.family === 1 ? "IPv6" : "IPv4"
+    let localFamily = address.family === 2 ? "IPv6" : "IPv4"
     this.sendEvent("listening", {
       "id": cId,
       "connection": {
