@@ -141,8 +141,6 @@ export class TcpSocketServer extends TcpSocket {
   close() {
     this.tcpSocketServer?.off("connect");
     this.tlsSocketServer?.off("connect");
-    this.tcpSocketServer = undefined;
-    this.tlsSocketServer = undefined;
     this.receiverListener?.onClose(this.getId(), null);
   }
 }
