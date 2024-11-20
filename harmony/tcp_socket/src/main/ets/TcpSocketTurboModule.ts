@@ -140,9 +140,10 @@ export class TcpSocketTurboModule extends TurboModule implements TM.TcpSocketMod
 
   close(cid: number): void {
     let socketServer: TcpSocketServer = this.getTcpServer(cid);
-    socketServer.close();
+    socketServer?.close();
+    let socketClient: TcpSocketClient = this.getTcpClient(cid);
+    socketClient?.destroy();
     this.socketMap.delete(cid);
-
   }
 
   destroy(cid: number): void {
