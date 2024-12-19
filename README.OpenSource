@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-tcp-socket",
+        "License": "MIT License",
+        "License File": "https://github.com/Rapsssito/react-native-tcp-socket/blob/master/LICENSE",
+        "Version Number": "6.2.0",
+        "Owner" : "xiafeng@huawei.com",
+        "Upstream URL": "https://github.com/Rapsssito/react-native-tcp-socket",
+        "Description": "React Native TCP socket API for HarmonyOS with SSL/TLS support"
+    }
+]
